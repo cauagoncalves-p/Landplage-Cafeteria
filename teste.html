@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafeteria</title>
+    <meta name="description" content="Explore dezenas de variações de bebida favorita entre os devs ao redor do mundo!">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Teko:wght@300..700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #1f1517;
+            color: #ffffff;
+        }
+
+        html {
+            font-family: Inter, sans-serif;
+            font-weight: 500;
+        }
+
+        a {
+            text-decoration: none;
+            color: #FFF2E7;
+        }
+
+        a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        nav {
+            max-width: 1120px;
+            margin: auto;
+            padding: 1.5rem 10rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: Teko;
+            font-size: 2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .menu {
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            gap: 1.5rem;
+            color: #fff2e780;
+        }
+
+        .github {
+            color: #fff2e7;
+            font-weight: 600px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .principal {
+            background: #181012;
+        }
+
+        .hero {
+            max-width: 1120px;
+            height: 60vh;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6rem;
+            padding: 0rem 2rem;
+            margin: auto;
+            overflow: clip;
+        }
+
+        .hero-conteudo {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .destaque {
+            font-family: Epilogue;
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .marrom {
+            color: #a45a49;
+        }
+
+        .amarelo {
+            color: #e7a80e;
+        }
+
+        h1 {
+            font-family: Montserrat;
+            font-weight: 800;
+            font-size: 3.5rem;
+        }
+
+        hr {
+            border-color: #a45a49;
+        }
+
+        .hero-subtitulo {
+            color: #c7bab3;
+            font-family: Inter;
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero-imagens-container {
+            max-width: 45%;
+            column-count: 4;
+        }
+
+        .hero-imagens-container>figure>img {
+            width: 100%;
+            border-radius: 0.5rem;
+        }
+
+        .botao-container {
+            max-width: 1120px;
+            width: 100%;
+            margin: auto;
+            transform: translate("0, -50%");
+        }
+
+        button {
+            border: none;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background: #a45a49;
+        }
+
+        .receitas {
+            display: flex;
+            flex-direction: column;
+            max-width: 1120px;
+            padding: 3rem 2rem;
+            margin: auto;
+        }
+
+        .receitas-cabecalho {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .receitas-titulo {
+            font-family: Montserrat;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff2e7;
+        }
+
+        .receitas-subtitulo {
+            color: #c7bab3;
+            font-family: Inter;
+            font-weight: 400;
+            font-size: 1rem;
+        }
+
+        .receitas-card-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            padding: 0rem 5rem;
+        }
+
+        /* Ajuste o padding conforme necessário */
+        .receitas-card {
+            background: #241a1c;
+            padding: 2rem;
+            border-radius: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Remove a limitação de largura */
+        .receitas-card-cabecalho {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+        }
+
+        .receitas-card-cabecalho-detalhes {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .receitas-titulo {
+            font-family: Montserrat;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff2e7;
+        }
+
+        .receitas-avaliacao {
+            color: #756a67;
+            font-family: Inter;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .receitas-descricao {
+            color: #c7bab3;
+            font-family: Inter;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .receita-autor {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .receita-autor>img {
+            width: 2rem;
+            border-radius: 50%;
+        }
+
+        .receita-autor-nome {
+            color: #c7bab3;
+            font-family: Inter;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        footer {
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            background: #23181a;
+        }
+
+        .footer-copy {
+            color: #c7bab3;
+            font-family: Inter;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .footer-autor {
+            color: rgba(255, 242, 231, 0.50);
+            font-family: Inter;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav> <span class="logo">Cafeteria</span>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="/receitas.html">Receitas</a></li>
+                <li><a href="">Novidades</a></li>
+                <li><a href="">Melhor avaliadas</a></li>
+            </ul> <a href="https://github.com/cauagoncalves-p" class="github" target="_blank">Github</a>
+        </nav>
+    </header>
+    <main>
+        <div class="principal">
+            <section class="hero">
+                <header class="hero-conteudo"> <span class="destaque marrom">Novidade</span>
+                    <h1>Encontre a receita perfeita</h1>
+                    <hr />
+                    <h2 class="hero-subtitulo">Explore dezenas de variações de bebida favorita entre os devs ao redor do
+                        mundo!</h2>
+                </header>
+                <div class="hero-imagens-container">
+                    <figure><img src="assets/Banner-cafe-01.jpg" alt=""></figure>
+                    <figure><img src="assets/Banner-cafe-02.jpg" alt=""></figure>
+                    <figure><img src="assets/Banner-cafe-03.jpg" alt=""></figure>
+                    <figure><img src="assets/Banner-cafe-04.jpg" alt=""></figure>
+                    <figure><img src="assets/Banner-cafe-05.jpg" alt=""></figure>
+                    <figure><img src="assets/Banner-cafe-06.jpg" alt=""></figure>
+                    <figure><img src="assets/Banner-cafe-07.jpg" alt=""></figure>
+                    <figure><img src="assets/Banner-cafe-08.jpg" alt=""></figure>
+                    <figure><img src="assets/Banner-cafe-09.jpg" alt=""></figure>
+                    <figure><img src="assets/Banner-cafe-10.jpg" alt=""></figure>
+                    <figure><img src="assets/Banner-cafe-11.jpg" alt=""></figure>
+                    <figure><img src="assets/Banner-cafe-12.jpg" alt=""></figure>
+                    <figure><img src="assets/Banner-cafe-13.jpg" alt=""></figure>
+                </div>
+            </section>
+        </div>
+        <section class="botao-container"> <button type=""><img src="/assets/logo botao.png" alt=""></button> </section>
+        <section class="receitas">
+            <header class="receitas-cabecalho"> <span class="destaque marrom">Receitas</span>
+                <h2 class="receitas-tituto">Confira as últimas receitas</h2>
+                <p class="receitas-subtitulo">Dê uma olhada nas receitas mais amadas</p>
+            </header>
+            <div class="receitas-card-container">
+                <div class="receitas-card">
+                    <header class="receitas-card-cabecalho">
+                        <div class="receitas-card-cabecalho-detalhes"> <span class="destaque amarelo">Em alta🔥</span>
+                            <h3 class="receitas-titulo"><a href="/receitas.html">Cappuccino</a></h3>
+                        </div>
+                        <p class="receitas-avaliacao">Extraordinario . 4/4</p>
+                    </header>
+                    <p class="receitas-descricao">Uma bebida ideal para os amantes de doce e cremosidade. 😍</p>
+                    <div class="receita-autor"> <img src="/assets/foto-pessoa.jpeg" alt=""> <span
+                            class="receita-autor-nome">Cauã Gonçalves</span> </div>
+                </div>
+                <div class="receitas-card">
+                    <header class="receitas-card-cabecalho">
+                        <div class="receitas-card-cabecalho-detalhes"> <span class="destaque amarelo">Em alta🔥</span>
+                            <h3 class="receitas-titulo"><a href="/receitas.html">Cappuccino</a></h3>
+                        </div>
+                        <p class="receitas-avaliacao">Extraordinario . 4/4</p>
+                    </header>
+                    <p class="receitas-descricao">Uma bebida ideal para os amantes de doce e cremosidade. 😍</p>
+                    <div class="receita-autor"> <img src="/assets/foto-pessoa.jpeg" alt=""> <span
+                            class="receita-autor-nome">Cauã Gonçalves</span> </div>
+                </div>
+                <div class="receitas-card">
+                    <header class="receitas-card-cabecalho">
+                        <div class="receitas-card-cabecalho-detalhes"> <span class="destaque amarelo">Em alta🔥</span>
+                            <h3 class="receitas-titulo"><a href="/receitas.html">Cappuccino</a></h3>
+                        </div>
+                        <p class="receitas-avaliacao">Extraordinario . 4/4</p>
+                    </header>
+                    <p class="receitas-descricao">Uma bebida ideal para os amantes de doce e cremosidade. 😍</p>
+                    <div class="receita-autor"> <img src="/assets/foto-pessoa.jpeg" alt=""> <span
+                            class="receita-autor-nome">Cauã Gonçalves</span> </div>
+                </div>
+                <div class="receitas-card">
+                    <header class="receitas-card-cabecalho">
+                        <div class="receitas-card-cabecalho-detalhes"> <span class="destaque amarelo">Em alta🔥</span>
+                            <h3 class="receitas-titulo"><a href="/receitas.html">Cappuccino</a></h3>
+                        </div>
+                        <p class="receitas-avaliacao">Extraordinario . 4/4</p>
+                    </header>
+                    <p class="receitas-descricao">Uma bebida ideal para os amantes de doce e cremosidade. 😍</p>
+                    <div class="receita-autor"> <img src="/assets/foto-pessoa.jpeg" alt=""> <span
+                            class="receita-autor-nome">Cauã Gonçalves</span> </div>
+                </div>
+                <div class="receitas-card">
+                    <header class="receitas-card-cabecalho">
+                        <div class="receitas-card-cabecalho-detalhes"> <span class="destaque amarelo">Em alta🔥</span>
+                            <h3 class="receitas-titulo"><a href="/receitas.html">Cappuccino</a></h3>
+                        </div>
+                        <p class="receitas-avaliacao">Extraordinario . 4/4</p>
+                    </header>
+                    <p class="receitas-descricao">Uma bebida ideal para os amantes de doce e cremosidade. 😍</p>
+                    <div class="receita-autor"> <img src="/assets/foto-pessoa.jpeg" alt=""> <span
+                            class="receita-autor-nome">Cauã Gonçalves</span> </div>
+                </div>
+                <div class="receitas-card">
+                    <header class="receitas-card-cabecalho">
+                        <div class="receitas-card-cabecalho-detalhes"> <span class="destaque amarelo">Em alta🔥</span>
+                            <h3 class="receitas-titulo"><a href="/receitas.html">Cappuccino</a></h3>
+                        </div>
+                        <p class="receitas-avaliacao">Extraordinario . 4/4</p>
+                    </header>
+                    <p class="receitas-descricao">Uma bebida ideal para os amantes de doce e cremosidade. 😍</p>
+                    <div class="receita-autor"> <img src="/assets/foto-pessoa.jpeg" alt=""> <span
+                            class="receita-autor-nome">Cauã Gonçalves</span> </div>
+                </div>
+                <div class="receitas-card">
+                    <header class="receitas-card-cabecalho">
+                        <div class="receitas-card-cabecalho-detalhes"> <span class="destaque amarelo">Em alta🔥</span>
+                            <h3 class="receitas-titulo"><a href="/receitas.html">Cappuccino</a></h3>
+                        </div>
+                        <p class="receitas-avaliacao">Extraordinario . 4/4</p>
+                    </header>
+                    <p class="receitas-descricao">Uma bebida ideal para os amantes de doce e cremosidade. 😍</p>
+                    <div class="receita-autor"> <img src="/assets/foto-pessoa.jpeg" alt=""> <span
+                            class="receita-autor-nome">Cauã Gonçalves</span> </div>
+                </div>
+                <div class="receitas-card">
+                    <header class="receitas-card-cabecalho">
+                        <div class="receitas-card-cabecalho-detalhes"> <span class="destaque amarelo">Em alta🔥</span>
+                            <h3 class="receitas-titulo"><a href="/receitas.html">Cappuccino</a></h3>
+                        </div>
+                        <p class="receitas-avaliacao">Extraordinario . 4/4</p>
+                    </header>
+                    <p class="receitas-descricao">Uma bebida ideal para os amantes de doce e cremosidade. 😍</p>
+                    <div class="receita-autor"> <img src="/assets/foto-pessoa.jpeg" alt=""> <span
+                            class="receita-autor-nome">Cauã Gonçalves</span> </div>
+                </div>
+                <div class="receitas-card">
+                    <header class="receitas-card-cabecalho">
+                        <div class="receitas-card-cabecalho-detalhes"> <span class="destaque amarelo">Em alta🔥</span>
+                            <h3 class="receitas-titulo"><a href="/receitas.html">Cappuccino</a></h3>
+                        </div>
+                        <p class="receitas-avaliacao">Extraordinario . 4/4</p>
+                    </header>
+                    <p class="receitas-descricao">Uma bebida ideal para os amantes de doce e cremosidade. 😍</p>
+                    <div class="receita-autor"> <img src="/assets/foto-pessoa.jpeg" alt=""> <span
+                            class="receita-autor-nome">Cauã Gonçalves</span> </div>
+                </div>
+                <div class="receitas-card">
+                    <header class="receitas-card-cabecalho">
+                        <div class="receitas-card-cabecalho-detalhes"> <span class="destaque amarelo">Em alta🔥</span>
+                            <h3 class="receitas-titulo"><a href="/receitas.html">Cappuccino</a></h3>
+                        </div>
+                        <p class="receitas-avaliacao">Extraordinario . 4/4</p>
+                    </header>
+                    <p class="receitas-descricao">Uma bebida ideal para os amantes de doce e cremosidade. 😍</p>
+                    <div class="receita-autor"> <img src="/assets/foto-pessoa.jpeg" alt=""> <span
+                            class="receita-autor-nome">Cauã Gonçalves</span> </div>
+                </div>
+                <div class="receitas-card">
+                    <header class="receitas-card-cabecalho">
+                        <div class="receitas-card-cabecalho-detalhes"> <span class="destaque amarelo">Em alta🔥</span>
+                            <h3 class="receitas-titulo"><a href="/receitas.html">Cappuccino</a></h3>
+                        </div>
+                        <p class="receitas-avaliacao">Extraordinario . 4/4</p>
+                    </header>
+                    <p class="receitas-descricao">Uma bebida ideal para os amantes de doce e cremosidade. 😍</p>
+                    <div class="receita-autor"> <img src="/assets/foto-pessoa.jpeg" alt=""> <span
+                            class="receita-autor-nome">Cauã Gonçalves</span> </div>
+                </div>
+                <div class="receitas-card">
+                    <header class="receitas-card-cabecalho">
+                        <div class="receitas-card-cabecalho-detalhes"> <span class="destaque amarelo">Em alta🔥</span>
+                            <h3 class="receitas-titulo"><a href="/receitas.html">Cappuccino</a></h3>
+                        </div>
+                        <p class="receitas-avaliacao">Extraordinario . 4/4</p>
+                    </header>
+                    <p class="receitas-descricao">Uma bebida ideal para os amantes de doce e cremosidade. 😍</p>
+                    <div class="receita-autor"> <img src="/assets/foto-pessoa.jpeg" alt=""> <span
+                            class="receita-autor-nome">Cauã Gonçalves</span> </div>
+                </div>
+                <div class="receitas-card">
+                    <header class="receitas-card-cabecalho">
+                        <div class="receitas-card-cabecalho-detalhes"> <span class="destaque amarelo">Em alta🔥</span>
+                            <h3 class="receitas-titulo"><a href="/receitas.html">Cappuccino</a></h3>
+                        </div>
+                        <p class="receitas-avaliacao">Extraordinario . 4/4</p>
+                    </header>
+                    <p class="receitas-descricao">Uma bebida ideal para os amantes de doce e cremosidade. 😍</p>
+                    <div class="receita-autor"> <img src="/assets/foto-pessoa.jpeg" alt=""> <span
+                            class="receita-autor-nome">Cauã Gonçalves</span> </div>
+                </div>
+                <div class="receitas-card">
+                    <header class="receitas-card-cabecalho">
+                        <div class="receitas-card-cabecalho-detalhes"> <span class="destaque amarelo">Em alta🔥</span>
+                            <h3 class="receitas-titulo"><a href="/receitas.html">Cappuccino</a></h3>
+                        </div>
+                        <p class="receitas-avaliacao">Extraordinario . 4/4</p>
+                    </header>
+                    <p class="receitas-descricao">Uma bebida ideal para os amantes de doce e cremosidade. 😍</p>
+                    <div class="receita-autor"> <img src="/assets/foto-pessoa.jpeg" alt=""> <span
+                            class="receita-autor-nome">Cauã Gonçalves</span> </div>
+                </div>
+                <div class="receitas-card">
+                    <header class="receitas-card-cabecalho">
+                        <div class="receitas-card-cabecalho-detalhes"> <span class="destaque amarelo">Em alta🔥</span>
+                            <h3 class="receitas-titulo"><a href="/receitas.html">Cappuccino</a></h3>
+                        </div>
+                        <p class="receitas-avaliacao">Extraordinario . 4/4</p>
+                    </header>
+                    <p class="receitas-descricao">Uma bebida ideal para os amantes de doce e cremosidade. 😍</p>
+                    <div class="receita-autor"> <img src="/assets/foto-pessoa.jpeg" alt=""> <span
+                            class="receita-autor-nome">Cauã Gonçalves</span> </div>
+                </div>
+            </div>
+                
+    </main>
+    <footer>
+        <p class="footer-cop">Copright &lt;CODEFEE/&gt; 2024 </p>
+        <p class="footer-autor">Feito com muito 🖤 e café por Cauã Gonçalves</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Teko:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1f1517;
+    color: #ffffff;
+}
+
+html {
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    color: #FFF2E7;
+}
+
+a:hover{
+    color: #ffffff;
+    text-decoration: underline;
+}
+ul {
+    list-style: none;
+}
+
+nav {
+    max-width: 1120px;
+    margin: auto;
+    padding: 1.5rem 10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: Teko;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.menu {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    color: #fff2e780;
+}
+
+.github {
+    color: #fff2e7;
+    font-weight: 600px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.conteudo-principal {
+    background: #181012;
+}
+
+.etiqueta-destaque {
+    font-family: Epilogue;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.amarelo {
+    color: #e7a80e;
+}
+
+.marrom {
+    color: #A45A49;
+}
+
+
+h1 {
+    font-family: Montserrat, sans-serif;
+    font-weight: 800;
+    font-size: 3rem;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+
+
+.destaque {
+    max-width: 1120px;
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6rem;
+    padding: 0rem 2rem;
+    margin: auto;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+}
+
+.conteudo-destaque {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+.subtitulo-destaque {
+    color: #C7BAB3;
+    font-size: 1rem;
+    font-family: Inter, sans-serif;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.destaque .autor-receita {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.destaque .autor-receita>img {
+    width: 2rem;
+    border-radius: 50%;
+}
+
+.detalhes-autor {
+    display: flex;
+    flex-direction: column;
+}
+
+.nome-autor {
+    font-family: Inter, sans-serif;
+    color: #C7BAB3;
+    font-size: 1.125rem;
+    text-align: left;
+}
+
+.desde-autor {
+    color: #756A67;
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+}
+
+.beneficios-destaque {
+    width: 45%;
+}
+
+.item-beneficio {
+    text-align: right;
+    display: flex;
+    line-height: 1.6;
+    justify-content: space-between;
+    margin: 12px;
+}
+
+.titulo-beneficio {
+    font-family: Montserrat;
+    font-size: 1rem;
+    color: #FFF2E7;
+    font-weight: 600;
+}
+
+.classificacao-beneficio {
+    font-family: Inter, sans-serif;
+    color: #756A67;
+    font-size: 1rem;
+}
+
+.barra-progresso {
+    display: flex;
+    max-width: 100%;
+    height: 4px;
+}
+
+.barra-progresso div {
+    flex: 1;
+    background-color: #A45A49;
+    /* Marrom sólido */
+    margin-right: 2px;
+    border-radius: 10px;
+}
+
+.barra-progresso div.vazio {
+    background-color: #23181A;
+    /* Marrom translúcido */
+}
+
+.receita {
+    display: flex;
+    max-width: 1120px;
+    flex-direction: row;
+    align-items: center;
+    margin: auto;
+    gap: 4rem;
+}
+
+/* Parte do modo de preparo */
+.preparo-receita {
+    background: #23181A;
+    width: 80%;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.cabecalho-preparo {
+    line-height: 1.5;
+}
+
+.cabecalho-preparo>h3 {
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    color: #FFF2E7;
+}
+
+.cabecalho-preparo>span {
+    font-family: Inter, sans-serif;
+    color: #C7BAB3;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.passos-preparo>ol {
+    list-style-type: none;
+    /* Remove o estilo padrão dos números */
+    counter-reset: custom-counter;
+    /* Reseta o contador */
+}
+
+.passos-preparo ol>li {
+    counter-increment: custom-counter;
+    /* Incrementa o contador */
+    position: relative;
+    padding-left: 2.5rem;
+    /* Espaçamento à esquerda para os números */
+    margin-bottom: 1rem;
+    /* Espaçamento entre os itens */
+    font-family: Inter, sans-serif;
+    color: #C7BAB3;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 20px;
+}
+
+.passos-preparo ol>li::before {
+    content: counter(custom-counter);
+    /* Adiciona o número antes do item */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    text-align: center;
+    background-color: #A45A49;
+    /* Cor de fundo do quadrado */
+    color: #ffffff;
+    /* Cor do texto */
+    font-weight: bold;
+    /* Estilo dos números */
+    border-radius: 0.25rem;
+    /* Bordas arredondadas */
+}
+
+.ingredientes {
+    display: flex;
+    width: 35%;
+    flex-direction: column;
+    background: #23181A;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    padding: 10px;
+}
+
+/* Parte dos ingredientes */
+.cabecalho-ingredientes {
+    margin: 5px;
+    line-height: 1.5;
+}
+
+.cabecalho-ingredientes h3 {
+    font-family: Montserrat, sans-serif;
+    font-family: 1.5rem;
+    font-weight: 700;
+    color: #FFF2E7;
+}
+
+.cabecalho-ingredientes span {
+    font-family: Inter, sans-serif;
+    font-family: 1rem;
+    font-weight: 400;
+    color: #C7BAB3;
+}
+
+.item-ingrediente {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-ingrediente>div>label {
+    color: #C7BAB3;
+    font-size: 1rem;
+    font-family: Inter, sans-serif;
+}
+
+.item-ingrediente p {
+    color: #A45A49;
+    font-family: Inter, sans-serif;
+    margin-left: 1rem;
+    font-size: 0.8rem;
+}
+
+.item-ingrediente input[type="checkbox"] {
+    display: none;
+}
+
+.item-ingrediente input[type="checkbox"]+label {
+    position: relative;
+    padding-left: 2rem;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #C7BAB3;
+    font-family: Inter, sans-serif;
+}
+
+.item-ingrediente input[type="checkbox"]+label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 1rem;
+    height: 1rem;
+    background-color: #A45A49;
+    border-radius: 0.25rem;
+}
+
+/* Estilo do checkbox marcado */
+.item-ingrediente input[type="checkbox"]:checked+label::before {
+    background-color: #20AA57;
+}
+
+.item-ingrediente input[type="checkbox"]:checked+label::after {
+    content: "✔";
+    position: absolute;
+    left: 0.1rem;
+    bottom: 0;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+footer {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: #23181a;
+}
+
+.rodape-copyright {
+    color: #c7bab3;
+    font-family: Inter;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.rodape-autor {
+    color: rgba(255, 242, 231, 0.50);
+    font-family: Inter;
+    font-size: 1rem;
+    font-weight: 500;
+}
